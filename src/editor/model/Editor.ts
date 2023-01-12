@@ -18,6 +18,21 @@ import BlockManager from '../../block_manager';
 import SelectorManager from '../../selector_manager';
 import ParserModule from '../../parser';
 import StorageManager from '../../storage_manager';
+import TraitManager from '../../trait_manager';
+import LayerManager from '../../navigator';
+import AssetManager from '../../asset_manager';
+import DeviceManager from '../../device_manager';
+import PageManager from '../../pages';
+import I18nModule from '../../i18n';
+import UtilsModule from '../../utils';
+import KeymapsModule from '../../keymaps';
+import ModalModule from '../../modal_dialog';
+import PanelManager from '../../panels';
+import CodeManagerModule from '../../code_manager';
+import UndoManagerModule from '../../undo_manager';
+import RichTextEditorModule from '../../rich_text_editor';
+import CommandsModule from '../../commands';
+import StyleManager from '../../style_manager';
 
 //@ts-ignore
 Backbone.$ = $;
@@ -109,6 +124,42 @@ export default class EditorModel extends Model {
     return this.get('shallow');
   }
 
+  get I18n(): I18nModule {
+    return this.get('I18n');
+  }
+
+  get Utils(): UtilsModule {
+    return this.get('Utils');
+  }
+
+  get Commands(): CommandsModule {
+    return this.get('Commands');
+  }
+
+  get Keymaps(): KeymapsModule {
+    return this.get('Keymaps');
+  }
+
+  get Modal(): ModalModule {
+    return this.get('Modal');
+  }
+
+  get Panels(): PanelManager {
+    return this.get('Panels');
+  }
+
+  get CodeManager(): CodeManagerModule {
+    return this.get('CodeManager');
+  }
+
+  get UndoManager(): UndoManagerModule {
+    return this.get('UndoManager');
+  }
+
+  get RichTextEditor(): RichTextEditorModule {
+    return this.get('RichTextEditor');
+  }
+
   get Canvas(): CanvasModule {
     return this.get('Canvas');
   }
@@ -133,12 +184,36 @@ export default class EditorModel extends Model {
     return this.get('SelectorManager');
   }
 
-  get StorageManager(): StorageManager {
+  get Storage(): StorageManager {
     return this.get('StorageManager');
+  }
+
+  get Traits(): TraitManager {
+    return this.get('TraitManager');
   }
 
   get Parser(): ParserModule {
     return this.get('Parser');
+  }
+
+  get Layers(): LayerManager {
+    return this.get('LayerManager');
+  }
+
+  get Assets(): AssetManager {
+    return this.get('AssetManager');
+  }
+
+  get Devices(): DeviceManager {
+    return this.get('DeviceManager');
+  }
+
+  get Pages(): PageManager {
+    return this.get('PageManager');
+  }
+
+  get Styles(): StyleManager {
+    return this.get('StyleManager');
   }
 
   constructor(conf: EditorConfig = {}) {
